@@ -9,14 +9,15 @@ namespace Employees
     partial class Employee
     {
         // Methods.
-        public void GiveBonus(float amount)
+        public virtual void GiveBonus(float amount)
         {Pay += amount;}
-        public void DisplayStats()
+        public virtual void DisplayStats()
         {
             Console.WriteLine("Name: {0}", Name);
             Console.WriteLine("ID: {0}", ID);
             Console.WriteLine("Age: {0}", Age);
             Console.WriteLine("Pay: {0}", Pay);
+            Console.WriteLine("SSN: {0}", SocialSecurityNumber);
         }
         public double GetBenefitCost()
         { return empBenefits.ComputePayDeduction(); }
@@ -47,6 +48,11 @@ namespace Employees
         {
             get => empAge;
             set => empAge = value;
+        }
+        public string SocialSecurityNumber
+        {
+            get => empSSN;
+            set => empSSN = value;
         }
         public BenefitPackage Benefits
         {
