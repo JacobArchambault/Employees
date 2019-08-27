@@ -22,13 +22,23 @@ namespace Employees
             SalesPerson jill = new PTSalesPerson("Jill", 834, 3002, 100000, "111-12-1119", 90);
             GivePromotion(jill);
         }
-
         static void GivePromotion(Employee emp)
         {
             // Increase pay...
             // Give new parking space in company garage...
 
             Console.WriteLine("{0} was promoted!", emp.Name);
+            if (emp is SalesPerson s)
+            {
+                Console.WriteLine("{0} made {1} sale(s)!", emp.Name, 
+                    (s.SalesNumber));
+                Console.WriteLine();
+            }
+            if (emp is Manager m)
+            {
+                Console.WriteLine("{0} had {1} stock options...", emp.Name,
+                    (m.StockOptions));
+            }
         }
 
         static void Main(string[] args)
