@@ -31,12 +31,13 @@ namespace Employees
             switch (emp)
             {
                 case SalesPerson s when s.SalesNumber > 5:
-                    Console.WriteLine("{0} made {1} sale(s)!", emp.Name,
-                        (s.SalesNumber));
+                    Console.WriteLine("{0} made {1} sale(s)!", emp.Name, s.SalesNumber);
                     break;
                 case Manager m:
-                    Console.WriteLine("{0} had {1} stock options...", emp.Name,
-                        (m.StockOptions));
+                    Console.WriteLine("{0} had {1} stock options...", emp.Name, m.StockOptions);
+                    break;
+                case Intern _:
+                    // Ignore interns
                     break;
             }
             Console.WriteLine();
