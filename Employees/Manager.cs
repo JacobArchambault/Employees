@@ -8,6 +8,12 @@ namespace Employees
 {
     class Manager : Employee
     {
+        public Manager(string fullName, int age, int empID, float currPay, string ssn, int numbOfOpts)
+            :base(fullName, age, empID, currPay, ssn)
+        {
+            StockOptions = numbOfOpts;
+        }
+        public Manager() { }
         public int StockOptions { get; set; }
     }
 }
