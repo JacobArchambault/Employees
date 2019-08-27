@@ -11,7 +11,6 @@ namespace Employees
         // Methods.
         public void GiveBonus(float amount)
         {Pay += amount;}
-
         public void DisplayStats()
         {
             Console.WriteLine("Name: {0}", Name);
@@ -19,6 +18,8 @@ namespace Employees
             Console.WriteLine("Age: {0}", Age);
             Console.WriteLine("Pay: {0}", Pay);
         }
+        public double GetBenefitCost()
+        { return empBenefits.ComputePayDeduction(); }
 
         // Properties
         public string Name
@@ -32,25 +33,26 @@ namespace Employees
                     empName = value;
             }
         }
-
         public int ID
         {
             get { return empID; }
             set { empID = value; }
         }
-
         public float Pay
         {
             get { return currPay; }
             set { currPay = value; }
         }
-
         public int Age
         {
             get => empAge;
             set => empAge = value;
         }
-
+        public BenefitPackage Benefits
+        {
+            get => empBenefits;
+            set => empBenefits = value;
+        }
 
     }
 }
