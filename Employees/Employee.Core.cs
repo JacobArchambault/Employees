@@ -9,11 +9,11 @@ namespace Employees
     partial class Employee
     {
         // Field data.
-        private string empName;
-        private int empID;
-        private float currPay;
-        private int empAge;
-        private string empSSN;
+        protected string empName;
+        protected int empID;
+        protected float currPay;
+        protected int empAge;
+        protected string empSSN;
 
         // Constructors.
         public Employee() { }
